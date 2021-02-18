@@ -12,7 +12,7 @@ namespace ReviewsSite.Controllers
     {
         public ViewResult Index()
         {
-            Toppings toppings = new Toppings();
+            Toppings toppings = new Toppings(57, "Pepperoni", "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper.", false, "I like pepperoni. It is tasty and good.");
 
             return View(toppings);
         }
