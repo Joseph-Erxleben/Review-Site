@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using ReviewsSite.Models;
+
 
 namespace ReviewsSite.Controllers
 {
@@ -10,7 +12,9 @@ namespace ReviewsSite.Controllers
     {
         public ViewResult Index()
         {
-            return View();
+            Toppings toppings = new Toppings();
+
+            return View(toppings);
         }
     }
 }
