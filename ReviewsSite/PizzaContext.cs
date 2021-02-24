@@ -11,6 +11,8 @@ namespace ReviewsSite
     {
         public DbSet<Toppings> Toppings { get; set; }
 
+        public DbSet<Review> Reviews { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb; Database=PizzaDB_102021; Trusted_Connection=True";

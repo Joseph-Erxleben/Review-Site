@@ -15,6 +15,8 @@ namespace ReviewsSite.Models
         public bool IsVegetarian { get; set; }
         public string Review { get; set; }
 
+        public virtual List<Review>
+
         public Toppings()
         {
 
