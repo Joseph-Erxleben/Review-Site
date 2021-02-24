@@ -1,0 +1,35 @@
+﻿@model ReviewsSite.Models.Toppings
+@*
+    
+*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <h1>@Model.Name</h1>
+    <p>@Model.Description</p>
+
+    @foreach (var review in Model.Reviews)
+    {
+        <article>
+        <p>@Model.Reviews.ReviewerName</p>
+
+
+
+
+        </article>
+    }
+
+
+
+
+
+
+</body>
+</html>

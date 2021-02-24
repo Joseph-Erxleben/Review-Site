@@ -7,10 +7,11 @@ namespace ReviewsSite.Models
 {
     public class Review
     {
-        public int Id { get; set; }
+        public int ReviewId { get; set; }
         public string ReviewContent { get; set; }
         public string ReviewerName { get; set; }
         public int ReviewScore { get; set; }
 
+        public virtual Toppings Toppings { get; set; }
     }
 }

@@ -42,6 +42,23 @@ namespace ReviewsSite
                     Review = "Review"
                 }
             );
+
+            modelBuilder.Entity<Review>().HasData(
+                new Review()
+                {
+                    ReviewId = 1,
+                    ReviewContent = "Content Area",
+                    ReviewerName = "Elon Musk",
+                    ReviewScore = 4/5
+                },
+                new Review()
+                {
+                    ReviewId = 2,
+                    ReviewContent = "Area of Content",
+                    ReviewerName = "Scooby Doo",
+                    ReviewScore = 2/5
+                }
+             ); 
         }
     }
 }

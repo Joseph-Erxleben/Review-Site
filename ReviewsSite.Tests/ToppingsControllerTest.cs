@@ -12,7 +12,7 @@ namespace ReviewsSite.Tests
         
         public ToppingsControllerTest()
         {
-            sut = new ToppingsController();
+            //sut = new ToppingsController();
         }
 
 
