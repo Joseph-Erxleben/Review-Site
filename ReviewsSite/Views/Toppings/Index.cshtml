@@ -20,10 +20,7 @@
         @foreach(var toppings in Model)
         {
          <article>
-             <h3>Name: @toppings.Name</h3>
-             <p>Description: @toppings.Description</p>
-             <p>Is vegetarian?: @toppings.IsVegetarian</p>
-             <p>Review: @toppings.Review</p>
+             <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a></h3>             
          </article>
         }
 

@@ -23,5 +23,12 @@ namespace ReviewsSite.Controllers
 
             return View(toppingsList);
         }
+
+        public ViewResult Details(int id)
+        {
+            var toppings = toppingsRepo.GetById(id);
+
+            return View(toppings);
+        }
     }
 }
