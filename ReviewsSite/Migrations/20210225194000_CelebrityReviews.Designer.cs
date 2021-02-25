@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(PizzaContext))]
-    partial class PizzaContextModelSnapshot : ModelSnapshot
+    [Migration("20210225194000_CelebrityReviews")]
+    partial class CelebrityReviews
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,7 +107,7 @@ namespace ReviewsSite.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper.",
+                            Description = "Delicious",
                             Img = "Pepperoni.png",
                             IsVegetarian = false,
                             Name = "Pepperoni"
@@ -113,7 +115,7 @@ namespace ReviewsSite.Migrations
                         new
                         {
                             Id = 2,
-                            Description = "The mild-flavored, unripe fruit of the bell or sweet pepper, Capsicum annuum grossum, used as a green vegetable.",
+                            Description = "Delicious",
                             Img = "GPepper.png",
                             IsVegetarian = true,
                             Name = "Green Pepper"

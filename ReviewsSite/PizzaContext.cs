@@ -29,7 +29,7 @@ namespace ReviewsSite
                 {
                     Id = 1,
                     Name = "Pepperoni",
-                    Description = "Delicious",
+                    Description = "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper.",
                     IsVegetarian = false,
                     Img = "Pepperoni.png"
                 },
@@ -37,7 +37,7 @@ namespace ReviewsSite
                 {
                     Id = 2,
                     Name = "Green Pepper",
-                    Description = "Delicious",
+                    Description = "The mild-flavored, unripe fruit of the bell or sweet pepper, Capsicum annuum grossum, used as a green vegetable.",
                     IsVegetarian = true,
                     Img = "GPepper.png"
                 }
@@ -47,7 +47,7 @@ namespace ReviewsSite
                 new Review()
                 {
                     ReviewId = 1,
-                    ReviewContent = "Content Area",
+                    ReviewContent = "If it isn't Doge coin... At least it's shaped like a coin. #SpaceX",
                     ReviewerName = "Elon Musk",
                     ReviewScore = 4,
                     ToppingsId = 1
@@ -55,11 +55,27 @@ namespace ReviewsSite
                 new Review()
                 {
                     ReviewId = 2,
-                    ReviewContent = "Area of Content",
+                    ReviewContent = "Ruh Ro Raggy! Resse Aren't Scooby Snacks!!!",
                     ReviewerName = "Scooby Doo",
                     ReviewScore = 2,
                     ToppingsId = 2
-                }
+                },
+                 new Review()
+                 {
+                     ReviewId = 3,
+                     ReviewContent = "The only thing better than this topping is the review(Site)",
+                     ReviewerName = "Carlos",
+                     ReviewScore = 5,
+                     ToppingsId = 1
+                 },
+                  new Review()
+                  {
+                      ReviewId = 4,
+                      ReviewContent = "Pika Pika, Pikachu!",
+                      ReviewerName = "Pikachu",
+                      ReviewScore = 1,
+                      ToppingsId = 2
+                  }
              ); 
         }
     }
