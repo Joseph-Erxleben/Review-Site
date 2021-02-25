@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(PizzaContext))]
-    partial class PizzaContextModelSnapshot : ModelSnapshot
+    [Migration("20210225162321_addedToppingsId")]
+    partial class addedToppingsId
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,7 +50,7 @@ namespace ReviewsSite.Migrations
                         {
                             ReviewId = 1,
                             ReviewContent = "Content Area",
-                            ReviewScore = 4,
+                            ReviewScore = 0,
                             ReviewerName = "Elon Musk",
                             ToppingsId = 1
                         },
@@ -56,7 +58,7 @@ namespace ReviewsSite.Migrations
                         {
                             ReviewId = 2,
                             ReviewContent = "Area of Content",
-                            ReviewScore = 2,
+                            ReviewScore = 0,
                             ReviewerName = "Scooby Doo",
                             ToppingsId = 2
                         });

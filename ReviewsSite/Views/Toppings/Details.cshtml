@@ -1,0 +1,41 @@
+﻿@model ReviewsSite.Models.Toppings
+@*
+    
+*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+
+    <h1>@Model.Name</h1>
+    <p>Is vegetarian: @Model.IsVegetarian</p>
+    <p>@Model.Description</p>
+
+    @foreach (var review in Model.Reviews)
+    {
+        <article>
+        <h3>@review.ReviewerName</h3>
+            <h4>@review.ReviewScore / 5</h4>
+                <p>@review.ReviewContent</p>
+
+
+
+
+        </article>
+    }
+    <p>
+        <a href="/Toppings/Index/">Home</a>
+    </p>
+
+
+
+
+
+
+</body>
+</html>

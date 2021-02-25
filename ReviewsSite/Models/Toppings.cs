@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 
 namespace ReviewsSite.Models
 {
-
-
     public class Toppings
     {
         public int Id { get; set; }
@@ -14,6 +12,8 @@ namespace ReviewsSite.Models
         public string Description { get; set; }
         public bool IsVegetarian { get; set; }
         public string Review { get; set; }
+
+        public virtual ICollection<Review> Reviews { get; set; }
 
         public Toppings()
         {

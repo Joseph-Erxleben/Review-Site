@@ -11,6 +11,8 @@ namespace ReviewsSite
     {
         public DbSet<Toppings> Toppings { get; set; }
 
+        public DbSet<Review> Reviews { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             var connectionString = "Server=(localdb)\\mssqllocaldb; Database=PizzaDB_102021; Trusted_Connection=True";
@@ -40,6 +42,25 @@ namespace ReviewsSite
                     Review = "Review"
                 }
             );
+
+            modelBuilder.Entity<Review>().HasData(
+                new Review()
+                {
+                    ReviewId = 1,
+                    ReviewContent = "Content Area",
+                    ReviewerName = "Elon Musk",
+                    ReviewScore = 4,
+                    ToppingsId = 1
+                },
+                new Review()
+                {
+                    ReviewId = 2,
+                    ReviewContent = "Area of Content",
+                    ReviewerName = "Scooby Doo",
+                    ReviewScore = 2,
+                    ToppingsId = 2
+                }
+             ); 
         }
     }
 }
