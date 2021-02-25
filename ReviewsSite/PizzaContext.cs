@@ -31,7 +31,7 @@ namespace ReviewsSite
                     Name = "Pepperoni",
                     Description = "Delicious",
                     IsVegetarian = false,
-                    Review = "Review"
+                    Img = "Pepperoni.png"
                 },
                 new Toppings()
                 {
@@ -39,7 +39,7 @@ namespace ReviewsSite
                     Name = "Green Pepper",
                     Description = "Delicious",
                     IsVegetarian = true,
-                    Review = "Review"
+                    Img = "GPepper.png"
                 }
             );
 

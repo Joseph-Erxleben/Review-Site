@@ -11,7 +11,7 @@ namespace ReviewsSite.Models
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsVegetarian { get; set; }
-        public string Review { get; set; }
+        public string Img { get; set; } = "Default.png";
 
         public virtual ICollection<Review> Reviews { get; set; }
 
@@ -20,13 +20,12 @@ namespace ReviewsSite.Models
 
         }
 
-        public Toppings(int id, string name, string description, bool isVegetarian, string review)
+        public Toppings(int id, string name, string description, bool isVegetarian)
         {
             Id = id;
             Name = name;
             Description = description;
             IsVegetarian = isVegetarian;
-            Review = review;
         }
 
     }
