@@ -20,7 +20,8 @@
         @foreach(var toppings in Model)
         {
          <article>
-             <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a></h3>             
+             <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a></h3>   
+             <img src="/images/@toppings.Img" alt"Toppings Image" width="500" height="500" />
          </article>
         }
 

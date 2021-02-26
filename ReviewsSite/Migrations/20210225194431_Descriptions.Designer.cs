@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ReviewsSite;
 
 namespace ReviewsSite.Migrations
 {
     [DbContext(typeof(PizzaContext))]
-    partial class PizzaContextModelSnapshot : ModelSnapshot
+    [Migration("20210225194431_Descriptions")]
+    partial class Descriptions
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -65,7 +67,7 @@ namespace ReviewsSite.Migrations
                             ReviewId = 3,
                             ReviewContent = "The only thing better than this topping is the review(Site)",
                             ReviewScore = 5,
-                            ReviewerName = "Carlos Lopez",
+                            ReviewerName = "Carlos",
                             ToppingsId = 1
                         },
                         new
@@ -75,70 +77,6 @@ namespace ReviewsSite.Migrations
                             ReviewScore = 1,
                             ReviewerName = "Pikachu",
                             ToppingsId = 2
-                        },
-                        new
-                        {
-                            ReviewId = 5,
-                            ReviewContent = "I like my sausage bulky, like me.",
-                            ReviewScore = 5,
-                            ReviewerName = "Dwayne 'The Rock' Johnson",
-                            ToppingsId = 3
-                        },
-                        new
-                        {
-                            ReviewId = 6,
-                            ReviewContent = "Better than pepperoni.",
-                            ReviewScore = 4,
-                            ReviewerName = "Davis Murphy",
-                            ToppingsId = 3
-                        },
-                        new
-                        {
-                            ReviewId = 7,
-                            ReviewContent = "I love pineapple so much that I live in one.",
-                            ReviewScore = 5,
-                            ReviewerName = "SpongeBob SquarePants",
-                            ToppingsId = 4
-                        },
-                        new
-                        {
-                            ReviewId = 8,
-                            ReviewContent = "I hate pineapples because my neighbor lives in one.",
-                            ReviewScore = 0,
-                            ReviewerName = "Squidward Tentacles",
-                            ToppingsId = 4
-                        },
-                        new
-                        {
-                            ReviewId = 9,
-                            ReviewContent = "It sucks.  It's Great!",
-                            ReviewScore = 3,
-                            ReviewerName = "CatDog",
-                            ToppingsId = 5
-                        },
-                        new
-                        {
-                            ReviewId = 10,
-                            ReviewContent = "I always need more.",
-                            ReviewScore = 4,
-                            ReviewerName = "Clifford The Big Red Dog",
-                            ToppingsId = 5
-                        },
-                        new
-                        {
-                            ReviewId = 11,
-                            ReviewContent = "MUSHROOMS!",
-                            ReviewScore = 5,
-                            ReviewerName = "Peregrin 'Pippin' Took",
-                            ToppingsId = 6
-                        },
-                        new
-                        {
-                            ReviewId = 12,
-                            ReviewContent = "Zoinks Scoob! Like, sign me up for more man.",
-                            ReviewScore = 5,
-                            ReviewerName = "Shaggy",
-                            ToppingsId = 6
                         });
                 });
 
@@ -181,38 +119,6 @@ namespace ReviewsSite.Migrations
                             Img = "GPepper.png",
                             IsVegetarian = true,
                             Name = "Green Pepper"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Coarsely ground pork (and sometimes beef) with fennel, also known as “mild” Italian sausage.",
-                            Img = "Sausage.png",
-                            IsVegetarian = false,
-                            Name = "Sausage"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "A large juicy tropical fruit consisting of aromatic edible yellow flesh surrounded by a tough segmented skin and topped with a tuft of stiff leaves.",
-                            Img = "Pineapple.png",
-                            IsVegetarian = true,
-                            Name = "Pineapple"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Bacon is a type of salt-cured pork made from various cuts, typically from the pork belly or from the less fatty back cuts.",
-                            Img = "Bacon.png",
-                            IsVegetarian = false,
-                            Name = "Bacon"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "An enlarged complex aboveground fleshy fruiting body of a fungus (such as a basidiomycete) that consists typically of a stem bearing a pileus.",
-                            Img = "Mushroom.png",
-                            IsVegetarian = true,
-                            Name = "Mushrooms"
                         });
                 });
 
