@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using ReviewsSite.Models;
 using ReviewsSite.Repositories;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace ReviewsSite.Controllers
@@ -43,7 +44,7 @@ namespace ReviewsSite.Controllers
         {
             toppingsRepo.Create(model);
 
-            ViewBag.Result = "You have successfully saved your topping.";
+            ViewBag.Result = "You have successfully added your topping.";
 
             return View(model);
         }
