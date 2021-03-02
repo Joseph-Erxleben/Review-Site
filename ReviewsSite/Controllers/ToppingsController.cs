@@ -30,5 +30,22 @@ namespace ReviewsSite.Controllers
 
             return View(toppings);
         }
+
+        public ViewResult Create()
+        {
+
+            return View(new Toppings());
+        }
+
+        [HttpPost]
+
+        public ViewResult Create(Toppings model)
+        {
+            toppingsRepo.Create(model);
+
+            ViewBag.Result = "You have successfully saved your topping.";
+
+            return View(model);
+        }
     }
 }
