@@ -12,7 +12,7 @@ namespace ReviewsSite.Tests
 
         public ToppingsTests()
         {
-            sut = new Toppings(17, "This is a name", "This is a description", true, "This is a review");
+            sut = new Toppings(17, "This is a name", "This is a description", true);
         }
 
         [Fact]
@@ -45,14 +45,6 @@ namespace ReviewsSite.Tests
             bool result = sut.IsVegetarian;
 
             Assert.True(result);
-        }
-
-        [Fact]
-        public void Toppings_Constructer_Sets_Review_On_Toppings_Model()
-        {
-            string result = sut.Review;
-
-            Assert.Equal("This is a review", result);
         }
     }
 }

@@ -4,15 +4,29 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using ReviewsSite.Models;
+using ReviewsSite.Repositories;
 
 
 namespace ReviewsSite.Controllers
 {
     public class ToppingsController : Controller
     {
+        IRepository<Toppings> toppingsRepo;
+
+        public ToppingsController(IRepository<Toppings> toppingsRepo)
+        {
+            this.toppingsRepo = toppingsRepo;
+        }
         public ViewResult Index()
         {
-            Toppings toppings = new Toppings(57, "Pepperoni", "Pepperoni is an American variety of salami, made from cured pork and beef seasoned with paprika or other chili pepper.", false, "I like pepperoni. It is tasty and good.");
+            var toppingsList = toppingsRepo.GetAll();
+
+            return View(toppingsList);
+        }
+
+        public ViewResult Details(int id)
+        {
+            var toppings = toppingsRepo.GetById(id);
 
             return View(toppings);
         }
