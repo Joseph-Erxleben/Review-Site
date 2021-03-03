@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using ReviewsSite.Models;
 using ReviewsSite.Repositories;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace ReviewsSite.Controllers
@@ -29,6 +30,31 @@ namespace ReviewsSite.Controllers
             var toppings = toppingsRepo.GetById(id);
 
             return View(toppings);
+        }
+
+        public ViewResult Create()
+        {
+
+            return View(new Toppings());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Toppings model)
+        {
+
+            if (toppingsRepo.GetToppingsByName(model.Name) == null)
+            {
+                toppingsRepo.Create(model);
+                ViewBag.Result = "You have successfully saved this topping.";
+            }
+            else
+            {
+                ViewBag.Error = "That topping already exists and cannot be added.";
+            }
+
+            ModelState.Clear();
+
+            return View();
         }
     }
 }

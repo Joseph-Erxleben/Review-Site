@@ -23,5 +23,23 @@ namespace ReviewsSite.Controllers
             return View(reviewList);
         }
 
+        public ViewResult Create(int toppingId)
+        {
+            return View(new Review(){ToppingsId = toppingId});
+        }
+
+        [HttpPost]
+
+        public ViewResult Create(Review model)
+        {
+            reviewRepo.Create(model);
+
+            ViewBag.Result = "You have successfully written your review.";
+
+            ModelState.Clear();
+
+            return View(model);
+        }
+
     }
 }
