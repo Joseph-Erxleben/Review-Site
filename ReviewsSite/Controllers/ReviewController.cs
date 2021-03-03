@@ -23,12 +23,12 @@ namespace ReviewsSite.Controllers
             return View(reviewList);
         }
 
-        public ViewResult Create(int id)
+        public ViewResult Create(int toppingId)
         {
             //var toppings = reviewRepo.PopulateToppingsList();
             //ViewBag.Toppings = toppings;
 
-            return View(new Review(){ToppingsId = id});
+            return View(new Review(){ToppingsId = toppingId});
         }
 
         [HttpPost]
