@@ -42,6 +42,11 @@
                 <input asp-for="Img" class="form-control" />
                 <span asp-validation-for="Img" class="text-danger"></span>
             </div>
+            @*<div class="form-group">
+                <label asp-for="ToppingsId" class="control-label"></label>
+                <select asp-for="ToppingsId" class="form-control" asp-items="ViewBag.Toppings" />
+                <span asp-validation-for="ToppingsId" class="text-danger"></span>
+            </div>*@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
