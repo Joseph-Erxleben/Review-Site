@@ -25,9 +25,6 @@ namespace ReviewsSite.Controllers
 
         public ViewResult Create(int toppingId)
         {
-            //var toppings = reviewRepo.PopulateToppingsList();
-            //ViewBag.Toppings = toppings;
-
             return View(new Review(){ToppingsId = toppingId});
         }
 
