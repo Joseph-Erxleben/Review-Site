@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using ReviewsSite.Models;
 using ReviewsSite.Repositories;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace ReviewsSite.Controllers
@@ -29,6 +30,23 @@ namespace ReviewsSite.Controllers
             var toppings = toppingsRepo.GetById(id);
 
             return View(toppings);
+        }
+
+        public ViewResult Update(int id)
+        {
+            var toppings = toppingsRepo.GetById(id);
+
+            return View(toppings);
+        }
+
+        [HttpPost]
+        public ViewResult Update(Toppings model)
+        {
+            toppingsRepo.Update(model);
+
+            ViewBag.Result = "You have successfully updated this topping";
+
+            return View(model);
         }
     }
 }
