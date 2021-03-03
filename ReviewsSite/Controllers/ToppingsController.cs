@@ -48,5 +48,14 @@ namespace ReviewsSite.Controllers
 
             return View(model);
         }
+
+        public ActionResult Delete(int id)
+        {
+            var toppings = toppingsRepo.GetById(id);
+
+            toppingsRepo.Delete(toppings);
+
+            return RedirectToAction("Index");
+        }
     }
 }
