@@ -19,6 +19,7 @@
     <div class="row">
         <div class="col-md-4">
             <form asp-action="Update">
+                <div class="text-success">@ViewBag.Result</div>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <input type="hidden" asp-for="ReviewId" />
                 <input type="hidden" asp-for="ToppingsId" />
@@ -37,11 +38,6 @@
                     <input asp-for="ReviewScore" class="form-control" />
                     <span asp-validation-for="ReviewScore" class="text-danger"></span>
                 </div>
-                @*<div class="form-group">
-            <label asp-for="ToppingsId" class="control-label"></label>
-            <select asp-for="ToppingsId" class="form-control" asp-items="ViewBag.ToppingsId"></select>
-            <span asp-validation-for="ToppingsId" class="text-danger"></span>
-        </div>*@
                 <div class="form-group">
                     <input type="submit" value="Save" class="btn btn-primary" />
                 </div>
@@ -50,7 +46,7 @@
     </div>
 
     <div>
-        <a asp-action="Index">Back to List</a>
+        <a href="/Toppings/Details/@Model.ToppingsId">Back to Topping</a>
     </div>
 
     @section Scripts {
