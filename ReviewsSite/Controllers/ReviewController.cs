@@ -23,5 +23,22 @@ namespace ReviewsSite.Controllers
             return View(reviewList);
         }
 
+        public ViewResult Create()
+        {
+
+            return View(new Review());
+        }
+
+        [HttpPost]
+
+        public ViewResult Create(Review model)
+        {
+            reviewRepo.Create(model);
+
+            ViewBag.Result = "You have successfully written your review.";
+
+            return View(model);
+        }
+
     }
 }
