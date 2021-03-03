@@ -29,7 +29,6 @@ namespace ReviewsSite
             services.AddMvc();
             services.AddDbContext<PizzaContext>();
             services.AddScoped<IRepository<Toppings>, ToppingsRepository>();
-            services.AddScoped<IRepository<Review>, ReviewRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
