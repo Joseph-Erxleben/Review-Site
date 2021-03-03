@@ -22,23 +22,21 @@ namespace ReviewsSite.Controllers
             var reviewList = reviewRepo.GetAll();
             return View(reviewList);
         }
-        public ViewResult Update(int id)
+
+        public ViewResult Create(int toppingId)
         {
-            //var toppings = reviewRepo.PopulateToppingsList();
-
-            //ViewBag.Toppings = new SelectList(toppings, "Id", "Name");
-
-            var review = reviewRepo.GetById(id);
-
-            return View(review);
+            return View(new Review(){ToppingsId = toppingId});
         }
 
         [HttpPost]
-        public ViewResult Update(Review model)
-        {
-            reviewRepo.Update(model);
 
-            ViewBag.Result = "You have successfully updated this review";
+        public ViewResult Create(Review model)
+        {
+            reviewRepo.Create(model);
+
+            ViewBag.Result = "You have successfully written your review.";
+
+            ModelState.Clear();
 
             return View(model);
         }

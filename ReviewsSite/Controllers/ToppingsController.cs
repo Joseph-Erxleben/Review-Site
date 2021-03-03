@@ -32,21 +32,29 @@ namespace ReviewsSite.Controllers
             return View(toppings);
         }
 
-        public ViewResult Update(int id)
+        public ViewResult Create()
         {
-            var toppings = toppingsRepo.GetById(id);
 
-            return View(toppings);
+            return View(new Toppings());
         }
 
         [HttpPost]
-        public ViewResult Update(Toppings model)
+        public ActionResult Create(Toppings model)
         {
-            toppingsRepo.Update(model);
 
-            ViewBag.Result = "You have successfully updated this topping";
+            if (toppingsRepo.GetToppingsByName(model.Name) == null)
+            {
+                toppingsRepo.Create(model);
+                ViewBag.Result = "You have successfully saved this topping.";
+            }
+            else
+            {
+                ViewBag.Error = "That topping already exists and cannot be added.";
+            }
 
-            return View(model);
+            ModelState.Clear();
+
+            return View();
         }
 
         public ActionResult Delete(int id)
