@@ -36,6 +36,12 @@ namespace ReviewsSite.Repositories
             return _db.Reviews.Find(id);
         }
 
+        public Toppings GetToppingsByName(string name)
+        {
+            var toppings = _db.Set<Toppings>().Where(t => t.Name == name).FirstOrDefault();
+            return toppings;
+        }
+
         public void Update(Review obj)
         {
             _db.Reviews.Update(obj);

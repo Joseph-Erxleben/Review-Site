@@ -36,6 +36,8 @@ namespace ReviewsSite.Controllers
 
             ViewBag.Result = "You have successfully written your review.";
 
+            ModelState.Clear();
+
             return View(model);
         }
 

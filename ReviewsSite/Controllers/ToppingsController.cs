@@ -39,14 +39,22 @@ namespace ReviewsSite.Controllers
         }
 
         [HttpPost]
-
-        public ViewResult Create(Toppings model)
+        public ActionResult Create(Toppings model)
         {
-            toppingsRepo.Create(model);
 
-            ViewBag.Result = "You have successfully added your topping.";
+            if (toppingsRepo.GetToppingsByName(model.Name) == null)
+            {
+                toppingsRepo.Create(model);
+                ViewBag.Result = "You have successfully saved this topping.";
+            }
+            else
+            {
+                ViewBag.Error = "That topping already exists and cannot be added.";
+            }
 
-            return View(model);
+            ModelState.Clear();
+
+            return View();
         }
     }
 }
