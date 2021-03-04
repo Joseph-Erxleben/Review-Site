@@ -27,6 +27,7 @@ namespace ReviewsSite
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddDbContext<PizzaContext>();
             services.AddScoped<IRepository<Toppings>, ToppingsRepository>();
             services.AddScoped<IRepository<Review>, ReviewRepository>();

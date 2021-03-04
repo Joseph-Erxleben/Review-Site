@@ -18,13 +18,25 @@
 
         @foreach(var toppings in Model)
         {
-         <article>
+            <div class="box">
+                <div class="imgBx">
+                    <img src="/images/@toppings.Img" alt"Toppings Image" />
+                </div>
+                <div class="content">
+                    <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a> | <a href="/Toppings/Update/@toppings.Id">Edit Topping</a> | <a href="/Toppings/Delete/@toppings.Id">Delete topping</a> </h3>
+                    <p>Average Rating</p>
+                    <p>Description</p>
+                </div>
+
+            </div>
+
+         @*<article>
 
              <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a> | <a href="/Toppings/Update/@toppings.Id">Edit Topping</a> | <a href="/Toppings/Delete/@toppings.Id">Delete topping</a> </h3>
                         <img src="/images/@toppings.Img" alt"Toppings Image" width="500" height="500" />
 
             
-         </article>
+         </article>*@
         }
 
         <h1><a href="/Toppings/Create">Add a Topping to our site</a></h1>
