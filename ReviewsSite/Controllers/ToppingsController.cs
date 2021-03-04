@@ -57,6 +57,23 @@ namespace ReviewsSite.Controllers
             return View();
         }
 
+        public ViewResult Update(int id)
+        {
+            var toppings = toppingsRepo.GetById(id);
+
+            return View(toppings);
+        }
+
+        [HttpPost]
+        public ViewResult Update(Toppings model)
+        {
+            toppingsRepo.Update(model);
+
+            ViewBag.Result = "You have successfully updated this topping";
+
+            return View(model);
+        }
+
         public ActionResult Delete(int id)
         {
             var toppings = toppingsRepo.GetById(id);
