@@ -62,9 +62,11 @@ namespace ReviewsSite.Controllers
         {
             var review = reviewRepo.GetById(id);
 
+            int index = review.ToppingsId;
+            //var detailsString = "Details/" + index.ToString();
             reviewRepo.Delete(review);
+            return RedirectToAction("Details", "Toppings", new { id = index });
 
-            return RedirectToAction("Index");
         }
     }
 }
