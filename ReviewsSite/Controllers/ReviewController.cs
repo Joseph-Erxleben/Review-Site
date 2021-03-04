@@ -41,12 +41,8 @@ namespace ReviewsSite.Controllers
             return View(model);
         }
 
-        public ViewResult Update(int id)
+         public ViewResult Update(int id)
         {
-            //var toppings = reviewRepo.PopulateToppingsList();
-
-            //ViewBag.Toppings = new SelectList(toppings, "Id", "Name");
-
             var review = reviewRepo.GetById(id);
 
             return View(review);
@@ -70,6 +66,5 @@ namespace ReviewsSite.Controllers
 
             return RedirectToAction("Index");
         }
-        //random comment
     }
 }
