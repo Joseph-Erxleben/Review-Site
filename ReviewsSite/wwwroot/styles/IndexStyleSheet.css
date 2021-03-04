@@ -1,9 +1,55 @@
-﻿body {
-    background-color: #f3dfc6;
-
-
+﻿* {
+    text-decoration: none;
 }
 
-h1{
-    font-family:sans-serif;
+a:link {
+    text-decoration: none;
+}
+
+body {
+    background-color: #f3dfc6;
+}
+
+.box {
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    padding: 20px;
+    box-sizing: border-box;
+    background: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0, .5);
+    display: flex;
+    transition: 0.5s;
+    margin: 6px;
+}
+
+.box:hover {
+box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.box .imgBx {
+width: 150px;
+flex: 0 0 150px;
+}
+
+.box .imgBx img {
+ max-width: 100%;
+}
+
+.box .content {
+padding-left: 20px;
+}
+
+.box .content h2 {
+margin: 0;
+padding-left: 0;
+color: #ff055c;
+font-size: 22px;
+}
+
+.box .content p {
+ margin: 0;
+padding: 10px 0 0;
+text-align: justify;
 }
