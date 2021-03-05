@@ -17,28 +17,38 @@
             <a href="/Toppings/Index"><img src="~/images/pizza_four_eyes.png" alt="pizzafoureyes" /></a>
         </div>
         <div class="headerContent">
-            <h1>Topping Review Site!</h1>
-            <p><strong>Welcome to our website. This is where you will be able to review some of your favorite pizza toppings.</strong></p>
+            <h1>Four-Eye's Topping Review Site!</h1>
+            <p><strong>Welcome to our website.</strong></p>
+            <p><strong>This is where you will be able to review some of your favorite pizza toppings.</strong></p>
         </div>
     </header>
 
     <main>
-        <h1>@Model.Name</h1>
-        <img src="/images/@Model.Img" alt"@Image" width="500" height="500" />
-        <h2>Average Review: @Model.AverageReview() / 5</h2>
-        <p>Is vegetarian: @Model.IsVegetarian</p>
-        <p>@Model.Description</p>
+        <div class="detailsBox">
+            <h1>@Model.Name</h1>
+
+            <div class="detailsImgBx">
+                <img src="/images/@Model.Img" alt"@Image" />
+            </div>
+            <div class="content">
+                <h2>Average Review: @Model.AverageReview() / 5</h2>
+                <p>Is vegetarian: @Model.IsVegetarian</p>
+                <p>@Model.Description</p>
+            </div>
+        </div>
 
         @foreach (var review in Model.Reviews)
         {
-            <article>
-                <h3>@review.ReviewerName</h3>
-                <h4>@review.ReviewScore / 5</h4>
-                <p>@review.ReviewContent</p>
+    <article class="boxContent">
+        <div>
+            <h3>@review.ReviewerName</h3>
+            <h4>@review.ReviewScore / 5</h4>
+            <p>@review.ReviewContent</p>
 
-                <p><a href="/Review/Update/@review.ReviewId"><button id="sendBtn">Update</button></a></p>
-                <p><a href="/Review/Delete/@review.ReviewId"><button id="sendBtn">Delete</button></a></p>
-            </article>
+            <p><a href="/Review/Update/@review.ReviewId"><button id="sendBtn">Update</button></a></p>
+            <p><a href="/Review/Delete/@review.ReviewId"><button id="sendBtn">Delete</button></a></p>
+        </div>
+    </article>
         }
 
         <p><a href="/Review/Create/?toppingId=@Model.Id"><button id="sendBtn">Write a review</button></a></p>

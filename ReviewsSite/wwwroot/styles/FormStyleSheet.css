@@ -84,6 +84,8 @@ h2{
     margin: 10px;
     position: relative;
     overflow: hidden;
+    width: 8%;
+    text-align: center;
 }
 
 #listBtn:hover {
@@ -95,7 +97,7 @@ h2{
     content: "";
     position: absolute;
     left: 0;
-    width: 100%;
+    width: 18.5%;
     background: #3498db;
     z-index: -1;
     transition: 0.8s;
