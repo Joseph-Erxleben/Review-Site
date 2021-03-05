@@ -35,8 +35,9 @@ header{
     justify-items: flex-start;
 }
 
-.headerContent p{
-    margin-left: 3rem;
+.headerContent {
+    margin: auto;
+    text-align: center;
 }
 
 .box {
@@ -93,7 +94,7 @@ text-align: justify;
 color: #000000;
 }
 
-button{
+#sendBtn{
     border: 1px solid;
     border-color: darkgreen;
     border-radius: 4px;
@@ -106,12 +107,12 @@ button{
     overflow: hidden;
 }
 
-button:hover {
+#sendBtn:hover {
     color: green;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-button::before {
+#sendBtn::before {
     content: "";
     position: absolute;
     left: 0;
@@ -120,6 +121,7 @@ button::before {
     z-index: -1;
     transition: 0.8s;
 }
+
 
 
 

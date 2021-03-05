@@ -58,6 +58,7 @@ h2{
     position: relative;
     overflow: hidden;
     transition: ease;
+
 }
 
 #sendBtn:hover {
@@ -70,6 +71,34 @@ h2{
     width: 20px;
     height: 20px;
     cursor: pointer;
+}
+
+#listBtn {
+    border: 1px solid;
+    border-color: darkgreen;
+    border-radius: 4px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+#listBtn:hover {
+    color: green;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+#listBtn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #3498db;
+    z-index: -1;
+    transition: 0.8s;
 }
 
 
