@@ -2,8 +2,12 @@
     text-decoration: none;
 }
 
-a:link {
-    text-decoration: none;
+a {
+    color: darkgreen; 
+}
+
+a:visited {
+    color: darkgreen;
 }
 
 body {
@@ -12,6 +16,27 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: Helvetica, sans-serif;
+}
+
+header{
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.logo img {
+    max-height: 100px;
+    margin-right: 3rem;
+    margin-left: 1rem;
+    display: flex;
+    justify-items: flex-start;
+}
+
+.headerContent p{
+    margin-left: 3rem;
 }
 
 .box {

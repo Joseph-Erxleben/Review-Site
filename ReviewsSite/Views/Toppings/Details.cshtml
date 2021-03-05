@@ -9,32 +9,43 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Details</title>
+    <link rel="StyleSheet" type="text/css" href="~/styles/IndexStyleSheet.css" />
 </head>
 <body>
+    <header>
+        <div class="logo">
+            <a href="/Toppings/Index"><img src="~/images/pizza_four_eyes.png" alt="pizzafoureyes" /></a>
+        </div>
+        <div class="headerContent">
+            <h1>Topping Review Site!</h1>
+            <p><strong>Welcome to our website. This is where you will be able to review some of your favorite pizza toppings.</strong></p>
+        </div>
+    </header>
 
-    <h1>@Model.Name</h1>
-    <img src="/images/@Model.Img" alt"@Image" width="500" height="500" />
-    <h2>Average Review: @Model.AverageReview() / 5</h2>
-    <p>Is vegetarian: @Model.IsVegetarian</p>
-    <p>@Model.Description</p>
+    <main>
+        <h1>@Model.Name</h1>
+        <img src="/images/@Model.Img" alt"@Image" width="500" height="500" />
+        <h2>Average Review: @Model.AverageReview() / 5</h2>
+        <p>Is vegetarian: @Model.IsVegetarian</p>
+        <p>@Model.Description</p>
 
-    @foreach (var review in Model.Reviews)
-    {
-        <article>
-        <h3>@review.ReviewerName</h3>
-            <h4>@review.ReviewScore / 5</h4>
+        @foreach (var review in Model.Reviews)
+        {
+            <article>
+                <h3>@review.ReviewerName</h3>
+                <h4>@review.ReviewScore / 5</h4>
                 <p>@review.ReviewContent</p>
 
-            <p><a href="/Review/Update/@review.ReviewId">Update</a></p>
-            <p><a href="/Review/Delete/@review.ReviewId">Delete</a></p>
-        </article>
-    }
+                <p><a href="/Review/Update/@review.ReviewId">Update</a></p>
+                <p><a href="/Review/Delete/@review.ReviewId">Delete</a></p>
+            </article>
+        }
 
-    <p><a href="/Review/Create/?toppingId=@Model.Id">Write a review</a></p>
+        <p><a href="/Review/Create/?toppingId=@Model.Id">Write a review</a></p>
 
-    <p>
-        <a href="/Toppings/Index/">Home</a>
-    </p>
-
+        <p>
+            <a href="/Toppings/Index/">Home</a>
+        </p>
+    </main>
 </body>
 </html>
