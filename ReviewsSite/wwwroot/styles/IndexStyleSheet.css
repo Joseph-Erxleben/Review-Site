@@ -88,7 +88,39 @@ font-size: 18px;
 .box .content p {
  margin: 0;
 padding: 10px 0 0;
-margin-bottom: 20px;
+margin-bottom: 10px;
 text-align: justify;
 color: #000000;
 }
+
+button{
+    border: 1px solid;
+    border-color: darkgreen;
+    border-radius: 4px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    color: green;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background: #3498db;
+    z-index: -1;
+    transition: 0.8s;
+}
+
+
+
+

@@ -30,13 +30,14 @@
             <div class="content">
                 <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a> </h3>
                 <h4>Average Rating: @toppings.AverageReview() / 5</h4>
+                <p>Vegetarian: @toppings.IsVegetarian</p>
                 <p>Description: @toppings.Description </p>
-                <a href="/Toppings/Update/@toppings.Id"><button>Edit Topping</button></a> <a href="/Toppings/Delete/@toppings.Id"><button>Delete topping</button></a>
+                <a href="/Toppings/Update/@toppings.Id"><button id="sendBtn">Edit Topping</button></a> <a href="/Toppings/Delete/@toppings.Id"><button id="sendBtn">Delete topping</button></a>
             </div>
         </div>
     }
 
-    <h1><a href="/Toppings/Create">Add a Topping to our site</a></h1>
+    <h1><a href="/Toppings/Create"><button id="sendBtn">Add a Topping to our site</button></a></h1>
     </main>
 </body>
 </html>
