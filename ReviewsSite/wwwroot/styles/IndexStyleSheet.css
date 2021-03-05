@@ -29,15 +29,17 @@ header{
 
 .logo img {
     max-height: 100px;
-    margin-right: 3rem;
     margin-left: 1rem;
     display: flex;
     justify-items: flex-start;
+    margin-right: -116px;
 }
 
 .headerContent {
     margin: auto;
+    padding-left: -116px;
     text-align: center;
+
 }
 
 .box {
