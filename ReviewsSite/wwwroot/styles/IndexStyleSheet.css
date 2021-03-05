@@ -179,7 +179,7 @@ font-size: 22px;
 }
 
 .boxContent h4 {
-margin: 0;
+margin: 10px;
 padding-left: 0;
 color: #000000;
 font-size: 18px;
@@ -191,6 +191,7 @@ padding: 10px 0 0;
 margin-bottom: 10px;
 text-align: justify;
 color: #000000;
+font-size: 18px;
 }
 
 
