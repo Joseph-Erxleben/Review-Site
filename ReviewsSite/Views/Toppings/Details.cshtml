@@ -36,15 +36,15 @@
                 <h4>@review.ReviewScore / 5</h4>
                 <p>@review.ReviewContent</p>
 
-                <p><a href="/Review/Update/@review.ReviewId">Update</a></p>
-                <p><a href="/Review/Delete/@review.ReviewId">Delete</a></p>
+                <p><a href="/Review/Update/@review.ReviewId"><button id="sendBtn">Update</button></a></p>
+                <p><a href="/Review/Delete/@review.ReviewId"><button id="sendBtn">Delete</button></a></p>
             </article>
         }
 
-        <p><a href="/Review/Create/?toppingId=@Model.Id">Write a review</a></p>
+        <p><a href="/Review/Create/?toppingId=@Model.Id"><button id="sendBtn">Write a review</button></a></p>
 
         <p>
-            <a href="/Toppings/Index/">Home</a>
+            <a href="/Toppings/Index/"><button id="sendBtn">Home</button></a>
         </p>
     </main>
 </body>
