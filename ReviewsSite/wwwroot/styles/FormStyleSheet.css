@@ -1,0 +1,108 @@
+﻿* {
+    text-decoration: none;
+}
+
+a {
+    color: darkgreen;
+}
+
+a:visited {
+color: darkgreen;
+}
+
+body {
+    background-color: #f2c17b;
+    background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+    padding: 1rem;
+    font-family: Helvetica, sans-serif;
+}
+
+h2{
+    font-size: 35px;
+    
+}
+
+.submissionForm {
+    max-width: 500px;
+    margin: 2rem auto;
+    border: 2px solid #ffffff;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.control-label{
+    display:block;
+    padding: 1rem 0 .5rem;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.form-control, textarea {
+    display: block;
+    width: 100%;
+    border: 2px solid;
+    padding: .5rem;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+#sendBtn {
+    border: 1px solid;
+    border-color: darkgreen;
+    border-radius: 4px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    transition: ease;
+
+}
+
+#sendBtn:hover {
+    color: green;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.checkBox {
+    padding: 1rem;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+#listBtn {
+    border: 1px solid;
+    border-color: darkgreen;
+    border-radius: 4px;
+    background: none;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+    width: 8%;
+    text-align: center;
+}
+
+#listBtn:hover {
+    color: green;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+#listBtn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 18.5%;
+    background: #3498db;
+    z-index: -1;
+    transition: 0.8s;
+}
+
+
+
+

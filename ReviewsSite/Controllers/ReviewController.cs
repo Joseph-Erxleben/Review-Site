@@ -22,12 +22,27 @@ namespace ReviewsSite.Controllers
             var reviewList = reviewRepo.GetAll();
             return View(reviewList);
         }
-        public ViewResult Update(int id)
+
+        public ViewResult Create(int toppingId)
         {
-            //var toppings = reviewRepo.PopulateToppingsList();
+            return View(new Review(){ToppingsId = toppingId});
+        }
 
-            //ViewBag.Toppings = new SelectList(toppings, "Id", "Name");
+        [HttpPost]
 
+        public ViewResult Create(Review model)
+        {
+            reviewRepo.Create(model);
+
+            ViewBag.Result = "You have successfully written your review.";
+
+            ModelState.Clear();
+
+            return View(model);
+        }
+
+         public ViewResult Update(int id)
+        {
             var review = reviewRepo.GetById(id);
 
             return View(review);
@@ -43,5 +58,15 @@ namespace ReviewsSite.Controllers
             return View(model);
         }
 
+        public ActionResult Delete(int id)
+        {
+            var review = reviewRepo.GetById(id);
+
+            int index = review.ToppingsId;
+            //var detailsString = "Details/" + index.ToString();
+            reviewRepo.Delete(review);
+            return RedirectToAction("Details", "Toppings", new { id = index });
+
+        }
     }
 }

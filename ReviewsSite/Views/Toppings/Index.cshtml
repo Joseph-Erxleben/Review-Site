@@ -4,29 +4,41 @@
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width" />
-        <title>Toppings Index</title>
-    </head>
-    <body>
-        <h1>Topping Review Site!</h1>
-            <p>Welcome to our website. This is where you will be able to review some of your favorite pizza toppings.</p>
-        @*<h3>Name: @Model.Name</h3>
-        <p>Description: @Model.Description</p>
-        <p>Is vegetarian?: @Model.IsVegetarian</p>
-        <p>Review: @Model.Review</p>*@
-        <hr />
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Toppings Index</title>
+    <link rel="StyleSheet" type="text/css" href="~/styles/IndexStyleSheet.css" />
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="/Toppings/Index"><img src="~/images/pizza_four_eyes.png" alt="pizzafoureyes" /></a>
+        </div>
+        <div class="headerContent">
+            <h1>Four-Eye's Topping Review Site!</h1>
+            <p><strong>Welcome to our website.</strong></p> 
+            <p><strong>This is where you will be able to review some of your favorite pizza toppings.</strong></p>
+        </div>
+    </header>
 
-        @foreach(var toppings in Model)
-        {
-         <article>
-             <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a> | <a href="/Toppings/Update/@toppings.Id">Edit Topping</a></h3>  
-                        <img src="/images/@toppings.Img" alt"Toppings Image" width="500" height="500" />
-             
-         </article>
-        }
+    <main>
+    @foreach (var toppings in Model)
+    {
+        <div class="box">
+            <div class="imgBx">
+                <img src="/images/@toppings.Img" alt="@toppings.Name image" />
+            </div>
+            <div class="content">
+                <h3>Name: <a href="/Toppings/Details/@toppings.Id">@toppings.Name</a> </h3>
+                <h4>Average Rating: @toppings.AverageReview() / 5</h4>
+                <p>Vegetarian: @toppings.IsVegetarian</p>
+                <p>Description: @toppings.Description </p>
+                <a href="/Toppings/Update/@toppings.Id"><button id="sendBtn">Edit Topping</button></a> <a href="/Toppings/Delete/@toppings.Id"><button id="sendBtn">Delete topping</button></a>
+            </div>
+        </div>
+    }
 
-
-
-    </body>
+    <h1><a href="/Toppings/Create"><button id="sendBtn">Add a Topping to our site</button></a></h1>
+    </main>
+</body>
 </html>

@@ -10,7 +10,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Update</title>
+    <title>Create</title>
     <link rel="StyleSheet" type="text/css" href="~/styles/FormStyleSheet.css" />
 
 </head>
@@ -20,10 +20,10 @@
     <hr />
     <div class="row">
         <div class="col-md-4">
-            <form class="submissionForm" asp-action="Update">
+            <form class="submissionForm" asp-action="Create">
+                <div class="text-success">@ViewBag.Error</div>
                 <div class="text-success">@ViewBag.Result</div>
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                <input type="hidden" asp-for="Id" />
                 <div class="form-group">
                     <label asp-for="Name" class="control-label"></label>
                     <input asp-for="Name" class="form-control" />
@@ -37,22 +37,21 @@
                 <div class="form-group form-check">
                     <label class="form-check-label">
                         <input class="checkBox" asp-for="IsVegetarian" /> @Html.DisplayNameFor(model => model.IsVegetarian)
-                        <span class="checkmark"></span>
                     </label>
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Save" id="sendBtn" />
+                    <input type="submit" value="Create" id="sendBtn" />
                 </div>
             </form>
         </div>
     </div>
 
-    <div id="listBtn">
-        <a asp-action="Index">Back to List</a>
-    </div>
+<div id="listBtn">
+    <a asp-action="Index">Back to List</a>
+</div>
 
-    @section Scripts {
-        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-    }
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
 </body>
 </html>

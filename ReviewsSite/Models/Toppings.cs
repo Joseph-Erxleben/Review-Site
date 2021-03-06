@@ -41,6 +41,7 @@ namespace ReviewsSite.Models
             double sum = zeroCounter + oneCounter + twoCounter + threeCounter + fourCounter + fiveCounter;
 
             double averageReview = ((1 * oneCounter) + (2 * twoCounter) + (3 * threeCounter) + (4 * fourCounter) + (5 * fiveCounter)) / sum;
+            averageReview = Math.Round(averageReview, 2);
             return averageReview;
         }
 

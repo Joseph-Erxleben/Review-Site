@@ -32,6 +32,31 @@ namespace ReviewsSite.Controllers
             return View(toppings);
         }
 
+        public ViewResult Create()
+        {
+
+            return View(new Toppings());
+        }
+
+        [HttpPost]
+        public ActionResult Create(Toppings model)
+        {
+
+            if (toppingsRepo.GetToppingsByName(model.Name) == null)
+            {
+                toppingsRepo.Create(model);
+                ViewBag.Result = "You have successfully saved this topping.";
+            }
+            else
+            {
+                ViewBag.Error = "That topping already exists and cannot be added.";
+            }
+
+            ModelState.Clear();
+
+            return View();
+        }
+
         public ViewResult Update(int id)
         {
             var toppings = toppingsRepo.GetById(id);
@@ -47,6 +72,15 @@ namespace ReviewsSite.Controllers
             ViewBag.Result = "You have successfully updated this topping";
 
             return View(model);
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var toppings = toppingsRepo.GetById(id);
+
+            toppingsRepo.Delete(toppings);
+
+            return RedirectToAction("Index");
         }
     }
 }
